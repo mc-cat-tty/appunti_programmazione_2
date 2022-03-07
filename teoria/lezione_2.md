@@ -210,4 +210,4 @@ int v[N], z[N];
 ```
 
 ## Esercizio
-![](../esercizi/stampa_array_pun.cpp)
+[](../esercizi/stampa_array_pun.cpp)
