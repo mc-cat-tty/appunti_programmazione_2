@@ -145,6 +145,8 @@ Operatori:
 |shift a sx         |<<         |binario|
 |shift a dx         |>>         |binario|
 
+Il C1 ribalta tutti i bit, mentre il C2 è il C1 del numero originale più 1.
+
 Attenzione: l'operatore di shifting porta spesso a overflow.
 
 ## Operatori binari AND, OR, XOR
@@ -161,4 +163,86 @@ Calcolo z<sub>i</sub> come singolo bit secondo la seguente tabella:
     - 0|0 = 0
 - XOR:
     - 0^0 = 1^1 = 0
-    - 0^1 = 1^0 = 1
+    - 0^1 = 1^0 = 1 (vero quando sono diversi)
+
+Servono 4 bit per rappresentare una cifra decimale (da 0 a 9).
+
+## Operatore NOT
+È un operatore unario che ribalta (inverte il valore) di ogni bit del numero di partenza.
+
+Una configurazione con tutti i bit a 1, indipendente dalla dimensione del tipo di dato su cui è memorizzata, si può ottenere facendo: `~0`
+
+## Operatore di shift
+Operatore binario che sposta a sinistra o a destra ogni bit del primo operando di tante posizioni quante sono indicate dal secondo operando (numero intero).
+
+Se x = 110101 (supponendo un dato a 6 bit):
+ - x << 1 &rarr; 101010
+ - x << 2 &rarr; 010100
+ - x >> 2 &rarr; 001101
+ - x >> x &rarr; 000110
+
+La rappresentazione in b2 di `1<<n` è una sequenza di bit dove la n-esima cifra è a 1, mentre tutte le altre sono a 0. Quindi 1 seguito da n zeri. In questo modo posso creare maschere per verificare lo stato dei bit di una sequenza.
+
+La rappresentazione in b2 di `~(1<<n)` ha tutti i bit a 1, tranne quello in posizione n.
+
+## Maschere di bit
+Terminologia:
+ - *settare* un bit = assegnare il valore 1
+ - *resettare* un bit = assegnare il valore 0
+
+Le *maschere di bit* o *maschere binarie* servono per:
+ - controllare il valore di specifici bit
+ - settare/resettare il valore di alcuni bit
+ - indicare quali bit sono significativi e quali non lo sono
+
+Le maschere di bit tornano particolarmente utili per l'implementazione dei protocolli di rete.
+
+### Utilizzi pratici
+Per scoprire se l'i-esimo bit di un vettore *x* è settato o meno, basta fare: `x & (1<<i)`
+
+## Esercizio
+Scrivere un programma che prenda in input un numero x ed n e ritorni lo stato dell'n-esimo bit nel vettore x.
+()[../esercizi/controlla_bit.cpp]
+
+## Controllo di più bit
+Creo una maschera in cui ogni bit che mi interessa è settato: metto in OR più maschere, dove ciascuna è ottenuta shiftando a sinistra il numero 1 di n posizioni.
+
+Attenzione: il controllo si fa più complicato, perchè come risultato non posso avere solo 0 o 1.
+
+## Settare un bit
+Per settare un bit in una specifica posizione di un vettore di bit utilizzo l'operatore OR al posto dell'AND, quindi metto in OR il numero e la maschera che contiene tutti zero a parte il bit che voglio settare.
+
+Per settare l'i-esimo bit del vettore *x*: `x |= (1<<i)`
+
+## Esercizio
+Scrivere un programma che legga da stdin due numeri naturali x ed n, e setti il bit in posizione n nel numero x.
+
+()[../esercizi/setta_bit.cpp]
+
+## Resettare un bit
+Dato il vettore di bit *x*, se voglio resettare il bit in posizione *n* posso fare: `x &= ~(1<<n)`
+
+ ## Flippare un bit
+ Utilizzo lo XOR: `x ^= (1<<n)`
+
+ Lo XOR mi permette di flippare il bit. Se il bit n-esimo di x è a 0, viene portato a 1; se è a 1, diventa 0. Tutti gli altri bit non vengono modificati, perchè 0^0 = 0, 0^1 = 1.
+
+## Operatori e altri tipi di dato
+Gli operatori bitwise non operano su float e double. Possono essere utilizzati su `signed int` e `unsigned int`.
+
+## Esercizi
+1. Scrivere un programma che, preso in input da stdin un numero n, lo moltiplichi per 2 senza utilizzare l'operatore di moltiplicazione: ()[../esercizi/molt_2.cpp]
+2. Scrivere un programma che stampi se un numero naturale n letto da stdin è pari o dispari: ()[../esercizi/pari_dispari.cpp]
+3. Scrivere un programma che, dati due numeri n ed i, restituisca il risultato di n * 2^i senza utilizzare l'operatore di moltiplicaizone: ()[../esercizi/molt_2_i.cpp]
+4. Scrivere un programma che, dati due numeri n ed i, restituisca il risultato di n / 2^i senza utilizzare l'operatore di divisione: ()[../esercizi/div_2_i.cpp]
+5. Scrivere un programma che, dati i e j, stampi il numero z ottenuto ponendo le j cifre meno significative di z uguali alle j cifre più significative di i, con il resto dei bit a 0: ()[../esercizi/msb_to_lsb.cpp]
+6. Scrivere un programma che, dati i e j, stampi il numero z ottenuto ponendo le j cifre più significative di z uguali alle j cifre meno significative di i, con il resto dei bit a 0: ()[../esercizi/lsb_to_msb.cpp]
+7. Scrivere un programma che, presi in input k e j, ruoti a destra di j posizione la configurazione binaria di k: ()[../esercizi/rotazione_a_destra.cpp]
+8. Come sopra, ma la rotazione è a sinistra: ()[../esercizi/rotazione_a_sinistra.cpp]
+9. Scrivere un programma che, dato un numero n, calcoli il più piccolo numero dispari i tale che i>=n: ()[../esercizi/to_dispari.cpp]
+10. Come sopra, ma i deve essere il più grande numero dispari tale che i<=n: ()[../esercizi/to_pari.cpp]
+11. Gestire lo stato di illuminazione di una strada. La configurazione dei lampioni è rappresentata come un array di bit. Implementare le seguenti funzioni:
+  - funzione guasta/ripara
+  - stampa dello stato dei lampioni
+  - controllo risparmio energetico
+  - ()[../esercizi/lampioni.cpp]
