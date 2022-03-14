@@ -73,7 +73,7 @@ Scrivere un programma (usando i puntatori a funzione) che:
 - a seconda dell'operazione scelta chiami la funzione desiderata
 - presenti un menù per la selezione della scelta
 
-[](../esercizi/operazioni.cpp)
+[operazioni.cpp](../esercizi/operazioni.cpp)
 
 ## Passaggio di puntatori a funzione
 Una funzione può dichiarare tra i suoi argomenti un elemento di tipo puntatore a funzione
@@ -109,7 +109,7 @@ Programma che implementa una funzione per il calcolo della somma dei primi n val
 somma(f, n) = f(1) + f(2) + ... + f(n)
 ```
 
-[](../esercizi/somma_funz.cpp)
+[somma_funz.cpp](../esercizi/somma_funz.cpp)
 
 ## Operatori bit a bit
 Ci permettono di fare operazioni sui singoli bit delle variabili.
@@ -202,7 +202,7 @@ Per scoprire se l'i-esimo bit di un vettore *x* è settato o meno, basta fare: `
 
 ## Esercizio
 Scrivere un programma che prenda in input un numero x ed n e ritorni lo stato dell'n-esimo bit nel vettore x.
-()[../esercizi/controlla_bit.cpp]
+[controlla_bit.cpp](../esercizi/controlla_bit.cpp)
 
 ## Controllo di più bit
 Creo una maschera in cui ogni bit che mi interessa è settato: metto in OR più maschere, dove ciascuna è ottenuta shiftando a sinistra il numero 1 di n posizioni.
@@ -217,7 +217,7 @@ Per settare l'i-esimo bit del vettore *x*: `x |= (1<<i)`
 ## Esercizio
 Scrivere un programma che legga da stdin due numeri naturali x ed n, e setti il bit in posizione n nel numero x.
 
-()[../esercizi/setta_bit.cpp]
+[setta_bit.cpp](../esercizi/setta_bit.cpp)
 
 ## Resettare un bit
 Dato il vettore di bit *x*, se voglio resettare il bit in posizione *n* posso fare: `x &= ~(1<<n)`
@@ -231,18 +231,18 @@ Dato il vettore di bit *x*, se voglio resettare il bit in posizione *n* posso fa
 Gli operatori bitwise non operano su float e double. Possono essere utilizzati su `signed int` e `unsigned int`.
 
 ## Esercizi
-1. Scrivere un programma che, preso in input da stdin un numero n, lo moltiplichi per 2 senza utilizzare l'operatore di moltiplicazione: ()[../esercizi/molt_2.cpp]
-2. Scrivere un programma che stampi se un numero naturale n letto da stdin è pari o dispari: ()[../esercizi/pari_dispari.cpp]
-3. Scrivere un programma che, dati due numeri n ed i, restituisca il risultato di n * 2^i senza utilizzare l'operatore di moltiplicaizone: ()[../esercizi/molt_2_i.cpp]
-4. Scrivere un programma che, dati due numeri n ed i, restituisca il risultato di n / 2^i senza utilizzare l'operatore di divisione: ()[../esercizi/div_2_i.cpp]
-5. Scrivere un programma che, dati i e j, stampi il numero z ottenuto ponendo le j cifre meno significative di z uguali alle j cifre più significative di i, con il resto dei bit a 0: ()[../esercizi/msb_to_lsb.cpp]
-6. Scrivere un programma che, dati i e j, stampi il numero z ottenuto ponendo le j cifre più significative di z uguali alle j cifre meno significative di i, con il resto dei bit a 0: ()[../esercizi/lsb_to_msb.cpp]
-7. Scrivere un programma che, presi in input k e j, ruoti a destra di j posizione la configurazione binaria di k: ()[../esercizi/rotazione_a_destra.cpp]
-8. Come sopra, ma la rotazione è a sinistra: ()[../esercizi/rotazione_a_sinistra.cpp]
-9. Scrivere un programma che, dato un numero n, calcoli il più piccolo numero dispari i tale che i>=n: ()[../esercizi/to_dispari.cpp]
-10. Come sopra, ma i deve essere il più grande numero dispari tale che i<=n: ()[../esercizi/to_pari.cpp]
+1. Scrivere un programma che, preso in input da stdin un numero n, lo moltiplichi per 2 senza utilizzare l'operatore di moltiplicazione: [molt_2.cpp](../esercizi/molt_2.cpp)
+2. Scrivere un programma che stampi se un numero naturale n letto da stdin è pari o dispari: [pari_dispari.cpp](../esercizi/pari_dispari)
+3. Scrivere un programma che, dati due numeri n ed i, restituisca il risultato di n * 2^i senza utilizzare l'operatore di moltiplicaizone: [molt_2_i.cpp](../esercizi/molt_2_i.cpp)
+4. Scrivere un programma che, dati due numeri n ed i, restituisca il risultato di n / 2^i senza utilizzare l'operatore di divisione: [div_2_i.cpp](../esercizi/div_2_i.cpp)
+5. Scrivere un programma che, dati i e j, stampi il numero z ottenuto ponendo le j cifre meno significative di z uguali alle j cifre più significative di i, con il resto dei bit a 0: [msb_to_lsb.cpp](../esercizi/msb_to_lsb.cpp)
+6. Scrivere un programma che, dati i e j, stampi il numero z ottenuto ponendo le j cifre più significative di z uguali alle j cifre meno significative di i, con il resto dei bit a 0: [lsb_to_msb.cpp](../esercizi/lsb_to_msb.cpp)
+7. Scrivere un programma che, presi in input k e j, ruoti a destra di j posizione la configurazione binaria di k: [rotazione_a_destra.cpp](../esercizi/rotazione_a_destra.cpp)
+8. Come sopra, ma la rotazione è a sinistra: [rotazione_a_sinistra.cpp](../esercizi/rotazione_a_sinistra.cpp)
+9. Scrivere un programma che, dato un numero n, calcoli il più piccolo numero dispari i tale che i>=n: [to_dispari.cpp](../esercizi/to_dispari.cpp)
+10. Come sopra, ma i deve essere il più grande numero dispari tale che i<=n: ][to_pari.cpp](../esercizi/to_pari.cpp)
 11. Gestire lo stato di illuminazione di una strada. La configurazione dei lampioni è rappresentata come un array di bit. Implementare le seguenti funzioni:
   - funzione guasta/ripara
   - stampa dello stato dei lampioni
   - controllo risparmio energetico
-  - ()[../esercizi/lampioni.cpp]
+  - [lampioni.cpp](../esercizi/lampioni.cpp)
