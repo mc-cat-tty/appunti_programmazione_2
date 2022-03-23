@@ -87,23 +87,31 @@ int conta_occorrenze(list l, int v) {
     return count;
 }
 
-list cancella_occorrenze(list l, int v) {
-    // list aux_ele = l;
-    // list aux_ele_tail;
-    // while (aux_ele != NULL) {
-    //     aux_ele = search(aux_ele, v);
-    //     if (aux_ele != NULL) {
-    //         aux_ele_tail = tail(aux_ele);
-    //         l = delete_elem(l, aux_ele);
-    //         aux_ele = aux_ele_tail;
-    //     }
-    // }
-    // return l;
+list cancella_occorrenze(list l, int v) {  // versione ottimizzata
+    ele *e = (ele*) l;
+    ele *prev_e = NULL;
+    list aux;
 
-    ele *e;
-    while ((e = search(l, v)) != NULL) {
-        l = delete_ele(l, e);
-    }
+    if (l == NULL)  // se la lista è vuota
+        return l;
+    do {
+        if (head(e) == v) {  // se il valore contenuto da e è uguale a quello che sto cercando elimino l'elemento e
+            if (prev_e == NULL) {  // se devo eliminare il primo elemento
+                aux = tail(l);
+                delete l;
+                e = l = aux;
+            }
+            else {
+                prev_e->p = tail(e);
+                delete e;
+                e = prev_e->p;
+            }
+        }
+        else {
+            prev_e = e;
+            e = tail(e);
+        }
+    } while (e != NULL);
 
     return l;
 }

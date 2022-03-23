@@ -43,7 +43,7 @@ list crea_lista(int n) {
     return l;
 }
 
-list delete_elem(list l, ele *e) {
+list delete_ele(list l, ele *e) {
     if (l == e) {
         l = tail(l);
     }
@@ -60,7 +60,7 @@ list delete_elem(list l, ele *e) {
 
 list elimina_lista(list testa) {
     while (testa != NULL) {  // finchè non ottengo la lista vuota
-        testa = delete_elem(testa, testa);
+        testa = delete_ele(testa, testa);
     }
     return testa;
 }

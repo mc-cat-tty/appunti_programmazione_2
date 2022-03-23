@@ -58,6 +58,18 @@ list delete_ele(list l, ele *e) {
     return l;
 }
 
+list delte_tail_ele(list l) {
+    if (l == NULL)
+        return l;
+
+    ele *last_ele;
+    while ((l = tail(l)) != NULL) {
+        last_ele = l;
+    }
+
+    return delete_ele(l, last_ele);
+}
+
 list elimina_lista(list testa) {
     while (testa != NULL) {  // finchè non ottengo la lista vuota
         testa = delete_ele(testa, testa);
@@ -70,6 +82,8 @@ int main() {
     cout << "Numero di elementi: "; cin >> num;
 
     list l = crea_lista(num);
+    print_list(l);
+    l = delte_tail_ele(l);
     print_list(l);
 
     l = elimina_lista(l);

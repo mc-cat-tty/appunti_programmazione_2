@@ -65,15 +65,49 @@ list elimina_lista(list testa) {
     return testa;
 }
 
+list copia_lista(list l) {
+    list res = NULL;
+    ele *last_ele;
+
+    while (l != NULL) {
+        // copia dell'elemento puntato da l
+        ele *e = new ele;
+        e->v = l->v;
+        e->p = l->p;
+
+        if (res == NULL) {  // se la lista "copia" è vuota aggiungo il primo elemento
+            res = e;
+        }
+        else {  // se la lista non è vuota aggiungo l'elemento in ultima posizione (ordine corretto)
+            last_ele->p = e;
+        }
+        last_ele = e;
+        
+        // faccio avanzare l (scorrimento)
+        l = tail(l);
+    }
+
+    return res;
+}
+
 int main() {
     int num;
     cout << "Numero di elementi: "; cin >> num;
 
     list l = crea_lista(num);
+    list l_copy = copia_lista(l);
+
+    cout << "Lista l: " << endl;
     print_list(l);
+    cout << "Lista l_copy: " << endl;
+    print_list(l_copy);
 
     l = elimina_lista(l);
+
+    cout << "Lista l: " << endl;
     print_list(l);
+    cout << "Lista l_copy: " << endl;
+    print_list(l_copy);
 
     return 0;
 }
