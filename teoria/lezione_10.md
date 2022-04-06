@@ -58,4 +58,127 @@ classDiagram
 Abbiamo raggiunto l'obiettivo 2: 2 moduli separati tra loro (_liste_, _tipo_) che sono indipendenti dal tipo di dato memorizzato nella lista. L'implementazione del modulo _tipo_ è trasparente a chi lo usa, perchè non importa l'implementazione di print e compare.
 
 ## Esercizi
-- a partire da _progetto\_multifile_
+ - a partire da _progetto\_multifile_ rivedere il progetto usando il nuovo schema logico (aggiunta modulo tipo)
+
+# Compilazione
+Problemi: dover enumerare tutti i file che si vogliono compilare come parametri di g++, ricompilare tutto da capo.
+
+## Compilazione separata
+La compilazione di un progetto comprende più fasi separate:
+INPUT       | FASE            | OUTPUT
+source file -> preprocessing -> translation unit
+translation unit -> translation -> object file
+object files -> linking -> executable
+
+Il file oggetto è dipendente dall'architettura.
+
+Il termine _compilazione_ viene usato in modo ambigo per riferirsi a:
+ - generazione di un file oggetto (preprocessing e traduzione)
+ - generazione di un eseguibile (tutte e 3 le fasi)
+
+## Preprocessing
+Dato un file sorgente la prima passata è effettuata dal preprocessore. Svolge 3 compiti:
+ - inclusione file (`include`)
+ - definizione di macro (`define`)
+- compilazione condizionale (`ifdef`, `ifndef`)
+
+Al termine di questa operazione si ottiene un testo, detto _unità di traduzione_.
+
+### Define
+Direttiva al preprocessore: `#define` -> permette di definire macro con o senza parametri (uno o più) e macro vuote.
+
+È una mera sostituzione di "caratteri" all'interno del codice sorgente.
+
+Esempi:
+```c
+#define ID 5
+
+#define NAME "file.cpp"
+
+#define INC(a) (a)++  // servono parentesi aggiuntive perchè avviene una sostituzione carattere per carattere
+
+#define PRINT_MAX(a, b) if ((a) > (b)) \
+                           cout << (a); \
+                        else \
+                           cout << (b);  // una macro deve svilupparsi su una sola riga
+
+#define ID  // a partire da questo punto del codice viene eliminata la sequenza di caratteri "ID" ed eliminarla, ma da questo punto in poi ID è definito come macro
+```
+Nota: ricordati di usare parentesi per "proteggere" l'argomento di un define.
+
+### Ifdef
+Significa "if defined". Controlla se un identificatore è stato definito.
+
+Esempio:
+```c
+#ifdef identificatore
+   codice
+[#else
+   codice 2
+[#elif
+   codice 3]
+]
+#endif
+```
+
+## Compilazione condizionale
+La l'identificatore è definito, _codice_ viene lasciato nella translation unit, altrimenti viene eliminato.
+
+Questi identificatore vengono compilati in sequenza; viene eseguito il codice del primo identificatore come macro, se esiste. Attraverso la definizione di identificatore posso decidere quale porzione di codice eseguire.
+
+Utilizzato per fare girare codice multipiattaforma.
+
+Esempio:
+```c
+#define UGO
+
+int main() {
+   cout << "Hello" << endl;
+
+   #ifdef UGO
+      cout << "UGO defined" << endl;
+   #else
+      cout << "UGO not defined" << endl;
+   #endif
+}
+```
+
+Queste operazioni vengono fatte al momento del preprocessing perchè in questo modo faccio arrivare al compilatore una translation unit pulita.
+
+Utilizzo tipico: codice di debug -> istruzioni per debugging incapsulate dentro all'ifdef
+```c
+#ifdef DEBUG
+   // stampe di debug
+#endif
+```
+
+Esempio: mantenere il codice retrocompatibile
+```c
+#ifdef TABLE_SIZE
+   int table[TABLE_SIZE];
+#else
+   cin >> dim;
+   int *table = new int[dim];
+#endif
+```
+
+Esempio: scrivere programmi portabili su diverse macchine
+```c
+#ifdef _WIN64
+   // includo librerie per windows
+#elif _LINUX
+   // includo lib linux
+#endif
+```
+
+### Ifndef
+Entra se la macro **non** è definita.
+
+Esempio: include guard
+```c
+#ifndef CLASS_H
+#define CLASS_H
+// code
+#endif
+```
+
