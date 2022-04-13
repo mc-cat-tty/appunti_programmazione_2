@@ -1,0 +1,14 @@
+OBJ = main.o fun-app.o liste.o tipo.o
+
+Web-list: $(OBJ)
+	g++ -o Web-list $(OBJ)
+
+-include dependencies
+
+.PHONY: clean cleanall
+depend:
+	g++ -MM *.cc > dependencies
+clean:
+	rm -f *.o
+cleanall:
+	rm -f Web-list *.o

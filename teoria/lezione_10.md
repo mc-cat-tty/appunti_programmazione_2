@@ -281,3 +281,6 @@ Se sono cambiati pochi file del mio progetto (anche N-1) non è necessario ricom
 Questo mi permette di velocizzare la fase di compilazione. Infatti la file di linking è molto più veloce della traduzione di file sorgente in file oggetto.
 
 Esempio: per compilare il kernel Linux da zero impiego 14 minuti, se i file oggetto sono tutti pronti impiego 15 secondi.
+
+## Esercizio
+[hello_world.cpp](../esercizi/compilazione_separata/hello_world.cpp)

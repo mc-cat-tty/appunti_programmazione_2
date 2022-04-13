@@ -1,0 +1,17 @@
+EXEC = Web-list
+OBJ = main.o fun-app.o liste.o tipo.o
+
+-include dependencies.txt
+
+build: $(OBJ) 
+	g++ -o $(EXEC) $(OBJ)
+
+.PHONY: clean cleanall
+clean:
+	rm -f *.o dependencies.txt
+
+cleanall:
+	rm -f *.o dependencies.txt $(EXEC)
+
+gendep:
+	g++ -MM main.cc > dependencies.txt

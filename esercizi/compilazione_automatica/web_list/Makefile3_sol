@@ -1,0 +1,22 @@
+OBJ = main.o fun-app.o liste.o tipo.o
+
+Web-list: $(OBJ)
+	g++ -o Web-list $(OBJ)
+
+main.o: main.cc tipo.h liste.h fun-app.h
+	g++ -c main.cc
+
+fun-app.o: fun-app.cc tipo.h liste.h fun-app.h
+	g++ -c fun-app.cc
+
+liste.o: liste.cc tipo.h liste.h
+	g++ -c liste.cc
+
+tipo.o: tipo.cc tipo.h 	
+	g++ -c tipo.cc
+
+.PHONY: clean cleanall
+clean:
+	rm -f *.o
+cleanall:
+	rm -f Web-list *.o
