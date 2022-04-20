@@ -7,11 +7,13 @@ using namespace std;
 
 void debug_print(tree root) {
     #ifdef DEBUG
-    print(root->inf); cout << endl;
-    print(root->first_child->inf); cout << " ";
-    print(root->first_child->next_sibling->inf); cout << " ";
-    print(root->first_child->next_sibling->next_sibling->inf); cout << endl;
-    print(root->first_child->next_sibling->first_child->inf); cout << endl;
+    // print(root->inf); cout << endl;
+    // print(root->first_child->inf); cout << " ";
+    // print(root->first_child->next_sibling->inf); cout << " ";
+    // print(root->first_child->next_sibling->next_sibling->inf); cout << endl;
+    // print(root->first_child->next_sibling->first_child->inf); cout << endl;
+    cout << serialize(root) << endl;
+    cout << depth(root) << endl;
     #endif
 }
 

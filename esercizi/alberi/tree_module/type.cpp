@@ -13,3 +13,9 @@ void copy(tipo_inf dst, const tipo_inf src) {
 void print(const tipo_inf data) {
     std::cout << data;
 }
+
+char* to_string(const tipo_inf data) {
+    char *res = new char[STR_MAX_DIM];
+    strcpy(res, data);
+    return res;
+}

@@ -36,4 +36,21 @@ void insert_child(tree p, tree c);
  */
 void insert_sibling(node* n, tree t);
 
+/**
+ * @brief serialize a tree
+ * 
+ * @param t tree to be serialized
+ * @return serialized string
+ */
+char* serialize(tree t);
+
+
+/**
+ * @brief return t's depth
+ * 
+ * @param t tree to be explored
+ * @return depth of t tree 
+ */
+unsigned int depth(tree t);
+
 #endif  // TREE_H
