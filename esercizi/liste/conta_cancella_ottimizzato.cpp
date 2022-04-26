@@ -66,13 +66,21 @@ list elimina_lista(list testa) {
 }
 
 ele* search(list l, int v) {
-    while (l != NULL) {
+    while (l != NULL)
         if (head(l) == v)
             return l;
         else
             l = tail(l);
-    }
+    
     return NULL;  // se non trovo niente ritorno NULL
+
+    // while (l != NULL && l->v != v)
+    //     l = tail(l);
+    
+    // if (l == NULL)
+    //     return NULL;
+
+    // return l;
 }
 
 int conta_occorrenze(list l, int v) {
