@@ -96,30 +96,55 @@ int conta_occorrenze(list l, int v) {
 }
 
 list cancella_occorrenze(list l, int v) {  // versione ottimizzata
-    ele *e = (ele*) l;
-    ele *prev_e = NULL;
-    list aux;
+    // ele *e = (ele*) l;
+    // ele *prev_e = NULL;
+    // list aux;
 
-    if (l == NULL)  // se la lista è vuota
-        return l;
-    do {
-        if (head(e) == v) {  // se il valore contenuto da e è uguale a quello che sto cercando elimino l'elemento e
-            if (prev_e == NULL) {  // se devo eliminare il primo elemento
-                aux = tail(l);
-                delete l;
-                e = l = aux;
-            }
-            else {
-                prev_e->p = tail(e);
+    // if (l == NULL)  // se la lista è vuota
+    //     return l;
+    // do {
+    //     if (head(e) == v) {  // se il valore contenuto da e è uguale a quello che sto cercando elimino l'elemento e
+    //         if (prev_e == NULL) {  // se devo eliminare il primo elemento
+    //             aux = tail(l);
+    //             delete l;
+    //             e = l = aux;
+    //         }
+    //         else {
+    //             prev_e->p = tail(e);
+    //             delete e;
+    //             e = prev_e->p;
+    //         }
+    //     }
+    //     else {
+    //         prev_e = e;
+    //         e = tail(e);
+    //     }
+    // } while (e != NULL);
+
+    // return l;
+
+    ele* e = (ele*) l;
+    list aux;
+    ele* prev = NULL;
+
+    while (e != NULL) {
+        if (e->v == v) {
+            if (prev == NULL) {  // se l'occorrenza capita nel primo elemento della lista
+                l = l->p;
                 delete e;
-                e = prev_e->p;
+                e = l;
+            }
+            else {  // se mi trovo in mezzo alla lista
+                prev->p = e->p;
+                delete e;
+                e = prev->p;
             }
         }
-        else {
-            prev_e = e;
-            e = tail(e);
+        else {  // continuo a scorrere mantenendo prev aggiornato
+            prev = e;
+            e = e->p;
         }
-    } while (e != NULL);
+    }
 
     return l;
 }
