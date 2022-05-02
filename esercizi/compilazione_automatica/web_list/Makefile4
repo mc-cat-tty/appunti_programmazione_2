@@ -14,4 +14,4 @@ cleanall:
 	rm -f *.o dependencies.txt $(EXEC)
 
 gendep:
-	g++ -MM main.cc > dependencies.txt
+	g++ -MM *.cc > dependencies.txt
