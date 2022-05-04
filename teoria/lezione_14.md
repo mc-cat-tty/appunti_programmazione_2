@@ -48,10 +48,10 @@ struct bnode {
 Assunzione: supponiamo che i valori di chiave siano univoci nel BST
 
 Le primitive associate ad un BST sono (costruzione, get, aggiornamento, accesso):
- - `bnode* new_node(tipo_inf)` -> costruisce il nodo associando la chiave giusta
+ - `bnode* new_node(tipo_key, tipo_inf)` -> costruisce il nodo associando la chiave giusta
  - ...
  - getters
- - `void bst_insert(bst&, bnode*)`
+ - `void bst_insert(bst&, bnode*)`  Il bst è passato per riferimento perchè nel caso dell'inserimento della radice devo modificare l'entry point.
  - `void bst_delete(bst&, bnode*)`
  - `bnode* bst_search(bst, tipo_key)`
 
@@ -63,3 +63,31 @@ Devo inserire il nodo in modo tale che venga mentenuta la proprietà di ordiname
 
 L'inserimento diventa costoso su BST corposi. L'altezza massima di nodi che visitiamo è pari all'altezza dell'albero.
 
+Nell'inserimento mi fermo quando arrivo ad un ramo che è NULL. Quando devo inserire un valore che è uguale al valore contenuto nella foglia devo prendere una decisione in base a come è stata definita la relazione d'ordine. In generale è buona norma non avere chiavi uguali all'interno del BST. Nel caso in cui avessi chiavi uguali sono costretto a ritornare il nodo associato alla prima chiave.
+
+## Cancellazione elemento
+`void bst_delete(bst &t)`
+
+### Nodo foglia
+Lo elimino senza problemi.
+
+### Nodo con un solo figlio
+
+### Nodo con due figli
+Voglio eliminare n
+
+Successori di n = sottoalbero destro di n
+Predecessori di n = sottoalbero sinistro di n
+
+Trovo il minore dei successori di n: vado a destra una volta, poi sempre a sinistra (minore dei successori). Ovvero il nodo più a sinistra del sottoalbero destro.
+
+Sostituisco il nodo n con il minore dei successori, poi elimino il minore dei successori dall'albero. Devo fare questo per mantenere la relazione d'ordine.
+
+## Costo ricerca e aggiornamento BST
+Il costo è proporzionale alla profondità dell'albero. La situazione peggiore è quella in cui ho una radice e un solo ramo che parte da essa. La situazione migliore si ha nel caso in cui l'albero sia bilanciato.
+
+## Albero AVL
+Albero bilanciato = la profondità del sottoalbero destro e sinistro differiscono di una unità.
+
+
+In questa struttura dati l'albero è autobilanciato.
