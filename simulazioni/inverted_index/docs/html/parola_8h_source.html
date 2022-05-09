@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.18"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>InvertedIndex:  File sorgente parola.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">InvertedIndex
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generato da Doxygen 1.8.18 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Cerca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">parola.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="parola_8h.html">Vai alla documentazione di questo file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="liste_8h.html">liste.h</a>&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="parola_8h.html#ad6ad5fac805481ad9876bc1fc0ac669d">    5</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="parola_8h.html#ad6ad5fac805481ad9876bc1fc0ac669d">P_MAXLEN</a> = 80;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="structparola.html">    7</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structparola.html">parola</a> {</div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="structparola.html#a05c67355561d2280e460e57efc06b3db">    8</a></span>&#160;<span class="keywordtype">char</span> <a class="code" href="structparola.html#a05c67355561d2280e460e57efc06b3db">p</a>[<a class="code" href="parola_8h.html#ad6ad5fac805481ad9876bc1fc0ac669d">P_MAXLEN</a>]; <span class="comment">//parola</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="structparola.html#ab7a6543c3112070dda7e3e45f8909031">    9</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="structparola.html#ab7a6543c3112070dda7e3e45f8909031">n_doc</a>;  <span class="comment">//numero di documenti che contengono la parola</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="structparola.html#a06e426844f2da6ac849431e110efb6f1">   10</a></span>&#160;<a class="code" href="structelem.html">lista</a> <a class="code" href="structparola.html#a06e426844f2da6ac849431e110efb6f1">l</a>;    <span class="comment">//lista dei documenti</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;};</div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="astructparola_html_ab7a6543c3112070dda7e3e45f8909031"><div class="ttname"><a href="structparola.html#ab7a6543c3112070dda7e3e45f8909031">parola::n_doc</a></div><div class="ttdeci">int n_doc</div><div class="ttdef"><b>Definition:</b> parola.h:9</div></div>
+<div class="ttc" id="astructparola_html_a05c67355561d2280e460e57efc06b3db"><div class="ttname"><a href="structparola.html#a05c67355561d2280e460e57efc06b3db">parola::p</a></div><div class="ttdeci">char p[P_MAXLEN]</div><div class="ttdef"><b>Definition:</b> parola.h:8</div></div>
+<div class="ttc" id="aparola_8h_html_ad6ad5fac805481ad9876bc1fc0ac669d"><div class="ttname"><a href="parola_8h.html#ad6ad5fac805481ad9876bc1fc0ac669d">P_MAXLEN</a></div><div class="ttdeci">const int P_MAXLEN</div><div class="ttdef"><b>Definition:</b> parola.h:5</div></div>
+<div class="ttc" id="astructparola_html"><div class="ttname"><a href="structparola.html">parola</a></div><div class="ttdef"><b>Definition:</b> parola.h:7</div></div>
+<div class="ttc" id="aliste_8h_html"><div class="ttname"><a href="liste_8h.html">liste.h</a></div></div>
+<div class="ttc" id="astructparola_html_a06e426844f2da6ac849431e110efb6f1"><div class="ttname"><a href="structparola.html#a06e426844f2da6ac849431e110efb6f1">parola::l</a></div><div class="ttdeci">lista l</div><div class="ttdef"><b>Definition:</b> parola.h:10</div></div>
+<div class="ttc" id="astructelem_html"><div class="ttname"><a href="structelem.html">elem</a></div><div class="ttdef"><b>Definition:</b> liste.h:8</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generato da &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.18
+</small></address>
+</body>
+</html>

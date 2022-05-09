@@ -3,6 +3,10 @@
         "cstdlib": "cpp",
         "new": "cpp",
         "ostream": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "*.tcc": "cpp",
+        "complex": "cpp",
+        "cstddef": "cpp",
+        "istream": "cpp"
     }
 }
