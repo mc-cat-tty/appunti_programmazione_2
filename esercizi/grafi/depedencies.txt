@@ -1,0 +1,2 @@
+graph.o: graph.cpp graph.h
+main.o: main.cpp graph.h

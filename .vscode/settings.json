@@ -7,6 +7,8 @@
         "*.tcc": "cpp",
         "complex": "cpp",
         "cstddef": "cpp",
-        "istream": "cpp"
+        "istream": "cpp",
+        "graph.h": "c",
+        "iosfwd": "cpp"
     }
 }
