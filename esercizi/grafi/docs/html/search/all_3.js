@@ -1,11 +1,6 @@
 var searchData=
 [
-  ['g_5fbuild_7',['g_build',['../main_8cpp.html#a10a123457d6eda8fd8edcdcde8e5dce9',1,'main.cpp']]],
-  ['get_5fadj_5flist_8',['get_adj_list',['../graph_8cpp.html#ad88dc138adde9a30c92eeed8ddc4cee1',1,'get_adj_list(graph g, int id):&#160;graph.cpp'],['../graph_8h.html#ad88dc138adde9a30c92eeed8ddc4cee1',1,'get_adj_list(graph g, int id):&#160;graph.cpp']]],
-  ['get_5fadj_5fnode_9',['get_adj_node',['../graph_8cpp.html#a4fadc775caf7e44ff2deeb0c3a05bb53',1,'get_adj_node(adj_node *node):&#160;graph.cpp'],['../graph_8h.html#a4fadc775caf7e44ff2deeb0c3a05bb53',1,'get_adj_node(adj_node *node):&#160;graph.cpp']]],
-  ['get_5fdim_10',['get_dim',['../graph_8cpp.html#a230d20a4c2118a391d8c85732259d7f7',1,'get_dim(graph g):&#160;graph.cpp'],['../graph_8h.html#a230d20a4c2118a391d8c85732259d7f7',1,'get_dim(graph g):&#160;graph.cpp']]],
-  ['get_5fnext_5fadj_11',['get_next_adj',['../graph_8cpp.html#a25a6f4f5f6d00224af9e753def17d22f',1,'get_next_adj(adj_list l):&#160;graph.cpp'],['../graph_8h.html#a25a6f4f5f6d00224af9e753def17d22f',1,'get_next_adj(adj_list l):&#160;graph.cpp']]],
-  ['graph_12',['graph',['../structgraph.html',1,'']]],
-  ['graph_2ecpp_13',['graph.cpp',['../graph_8cpp.html',1,'']]],
-  ['graph_2eh_14',['graph.h',['../graph_8h.html',1,'']]]
+  ['depedencies_2etxt_11',['depedencies.txt',['../depedencies_8txt.html',1,'']]],
+  ['dequeue_12',['dequeue',['../queue__bfs_8cpp.html#aa0f8a50dde3d0ab087df5015ef4b8138',1,'dequeue(bfs_queue &amp;q):&#160;queue_bfs.cpp'],['../queue__bfs_8h.html#aa0f8a50dde3d0ab087df5015ef4b8138',1,'dequeue(bfs_queue &amp;q):&#160;queue_bfs.cpp']]],
+  ['dim_13',['dim',['../structgraph.html#abf65d876b622791fa4e0693b74623f6a',1,'graph']]]
 ];

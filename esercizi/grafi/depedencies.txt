@@ -1,2 +1,4 @@
+bfs_visit.o: bfs_visit.cpp bfs_visit.h graph.h queue_bfs.h
 graph.o: graph.cpp graph.h
-main.o: main.cpp graph.h
+main.o: main.cpp graph.h bfs_visit.h
+queue_bfs.o: queue_bfs.cpp queue_bfs.h

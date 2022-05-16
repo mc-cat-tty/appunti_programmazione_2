@@ -3,6 +3,7 @@
 #include <limits>
 
 #include "graph.h"
+#include "bfs_visit.h"
 
 using namespace std;
 
@@ -15,14 +16,13 @@ graph g_build(ifstream &file, bool directed, bool weighted) {
 
     void (*add_arc_edge) (graph&, int, int, float);
     if (weighted)  // register function pointer
-        add_arc_edge = add_edge;
-    else
         add_arc_edge = add_arc;
+    else
+        add_arc_edge = add_edge;
 
     int tmp_s, tmp_d, tmp_w;
-    for (int i=0; i<g.dim; i++) {
+    while (!file.eof()) {
         file >> tmp_s >> tmp_d;
-        
         tmp_w = 1;
         if (weighted)
             file >> tmp_w;
@@ -31,7 +31,23 @@ graph g_build(ifstream &file, bool directed, bool weighted) {
         
         add_arc_edge(g, tmp_s, tmp_d, tmp_w);
     }
+
     return g;
+}
+
+void print_callback(unsigned int node_id, adj_list adj_l) {
+    cout << "Node " << node_id << " is connected to ";
+    while (adj_l != NULL) {
+        int u_id = get_adj_node(adj_l);
+        cout << u_id << " ";
+        adj_l = get_next_adj(adj_l);
+    }
+    cout << endl;
+}
+
+void print_connected_components(unsigned int *cc, int dim) {
+    for (int i=0; i<dim; i++)
+        cout << i+1 << " is belongs to tree number " << cc[i] << endl;
 }
 
 int main(int argc, const char *argv[]) {
@@ -46,6 +62,18 @@ int main(int argc, const char *argv[]) {
     graph g = g_build(f, d, w);
 
     print_graph(g);
+    cout << endl;
+
+    bfs_visit(g, 1, print_callback);
+    cout << endl;
+    
+    const unsigned int connected_start_idx = 6;  // the graph should not be connected
+    // const unsigned int connected_start_idx = 1;  // the graph should be connected
+    cout << "The graph is " << (connected(g, connected_start_idx) ? "connected" : "not connected") << endl << endl;
+
+    unsigned int connected_components_v[g.dim];
+    connected_components(g, connected_components_v);
+    print_connected_components(connected_components_v, g.dim);
 
     return 0;
 }

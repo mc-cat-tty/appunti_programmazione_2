@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['graph_24',['graph',['../structgraph.html',1,'']]]
+  ['bfs_5fqueue_44',['bfs_queue',['../structbfs__queue.html',1,'']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['weight_22',['weight',['../structadj__node.html#aadab2b753ed1e603df44cba8c6836d43',1,'adj_node']]]
+  ['is_5fempty_28',['is_empty',['../queue__bfs_8cpp.html#a475933faa7cdd011a11d789fb3c8de98',1,'is_empty(bfs_queue q):&#160;queue_bfs.cpp'],['../queue__bfs_8h.html#a475933faa7cdd011a11d789fb3c8de98',1,'is_empty(bfs_queue q):&#160;queue_bfs.cpp']]]
 ];

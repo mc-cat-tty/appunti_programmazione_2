@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['main_36',['main',['../main_8cpp.html#ac0f2228420376f4db7e1274f2b41667c',1,'main.cpp']]]
+  ['connected_58',['connected',['../bfs__visit_8cpp.html#abe35ca2d16a7c81c3273f16bcb0b8ddb',1,'connected(graph g, unsigned int start_id):&#160;bfs_visit.cpp'],['../bfs__visit_8h.html#abe35ca2d16a7c81c3273f16bcb0b8ddb',1,'connected(graph g, unsigned int start_id):&#160;bfs_visit.cpp']]],
+  ['connected_5fcomponents_59',['connected_components',['../bfs__visit_8cpp.html#a1dc4c340fc13ba5f2584ee67eec97555',1,'connected_components(graph g, unsigned int *v):&#160;bfs_visit.cpp'],['../bfs__visit_8h.html#a1dc4c340fc13ba5f2584ee67eec97555',1,'connected_components(graph g, unsigned int *v):&#160;bfs_visit.cpp']]]
 ];

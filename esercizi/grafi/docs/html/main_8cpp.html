@@ -72,17 +72,19 @@ $(function() {
 <code>#include &lt;fstream&gt;</code><br />
 <code>#include &lt;limits&gt;</code><br />
 <code>#include &quot;<a class="el" href="graph_8h_source.html">graph.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="bfs__visit_8h_source.html">bfs_visit.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for main.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cpp__incl.png" border="0" usemap="#main_8cpp" alt=""/></div>
 <map name="main_8cpp" id="main_8cpp">
-<area shape="rect" title=" " alt="" coords="151,5,233,32"/>
+<area shape="rect" title=" " alt="" coords="196,5,279,32"/>
 <area shape="rect" title=" " alt="" coords="5,80,85,107"/>
 <area shape="rect" title=" " alt="" coords="110,80,183,107"/>
 <area shape="rect" title=" " alt="" coords="208,80,267,107"/>
-<area shape="rect" href="graph_8h.html" title=" " alt="" coords="291,80,362,107"/>
-<area shape="rect" title=" " alt="" coords="294,155,359,181"/>
+<area shape="rect" href="graph_8h.html" title=" " alt="" coords="310,155,381,181"/>
+<area shape="rect" href="bfs__visit_8h.html" title=" " alt="" coords="342,80,431,107"/>
+<area shape="rect" title=" " alt="" coords="313,229,378,256"/>
 </map>
 </div>
 </div><table class="memberdecls">
@@ -90,6 +92,10 @@ Include dependency graph for main.cpp:</div>
 Functions</h2></td></tr>
 <tr class="memitem:a10a123457d6eda8fd8edcdcde8e5dce9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgraph.html">graph</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a10a123457d6eda8fd8edcdcde8e5dce9">g_build</a> (ifstream &amp;file, bool directed, bool weighted)</td></tr>
 <tr class="separator:a10a123457d6eda8fd8edcdcde8e5dce9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab56a9209f4909bcdca3305966329a2f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ab56a9209f4909bcdca3305966329a2f1">print_callback</a> (unsigned int node_id, <a class="el" href="graph_8h.html#a7304f6ecd4c575848d0b173d254317d6">adj_list</a> adj_l)</td></tr>
+<tr class="separator:ab56a9209f4909bcdca3305966329a2f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a861ef1ed8d2c5a37dcce78c3d0f06908"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a861ef1ed8d2c5a37dcce78c3d0f06908">print_connected_components</a> (unsigned int *cc, int dim)</td></tr>
+<tr class="separator:a861ef1ed8d2c5a37dcce78c3d0f06908"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac0f2228420376f4db7e1274f2b41667c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ac0f2228420376f4db7e1274f2b41667c">main</a> (int argc, const char *argv[])</td></tr>
 <tr class="separator:ac0f2228420376f4db7e1274f2b41667c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -150,6 +156,62 @@ Variables</h2></td></tr>
           <td></td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>argv</em>[]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab56a9209f4909bcdca3305966329a2f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab56a9209f4909bcdca3305966329a2f1">&#9670;&nbsp;</a></span>print_callback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void print_callback </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>node_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="graph_8h.html#a7304f6ecd4c575848d0b173d254317d6">adj_list</a>&#160;</td>
+          <td class="paramname"><em>adj_l</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a861ef1ed8d2c5a37dcce78c3d0f06908"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a861ef1ed8d2c5a37dcce78c3d0f06908">&#9670;&nbsp;</a></span>print_connected_components()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void print_connected_components </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int *&#160;</td>
+          <td class="paramname"><em>cc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>dim</em>&#160;</td>
         </tr>
         <tr>
           <td></td>

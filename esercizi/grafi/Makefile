@@ -1,7 +1,7 @@
 CXX = g++
-CXXFLAGS = -std=c++2a -Wall --pedantic
+CXXFLAGS = -std=c++20 -Wall --pedantic
 EXEC = graph
-OBJ = graph.o main.o
+OBJ = graph.o main.o queue_bfs.o bfs_visit.o
 
 build: $(OBJ)
 	$(CXX) $(CXXFLAGS) $(OBJ) -o $(EXEC)
