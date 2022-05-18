@@ -3,7 +3,7 @@
 #include "graph.h"
 
 /**
- * @brief Callback function that will be called inside the infix bfs visit.
+ * @brief Callback function that will be called inside the bfs visit.
  * 
  */
 typedef void (*bfs_visit_callback_t) (unsigned int node_id, adj_list al);
@@ -14,7 +14,7 @@ typedef void (*bfs_visit_callback_t) (unsigned int node_id, adj_list al);
  * @param g input graph
  * @param start_id id of start node
  * @param c callback function that will be called inside the infix bfs visit. Can be NULL if nothing to do
- * @return array of bool (g.dim size), aka visisted
+ * @return array of bool (of g.dim size), aka visisted
  */
 bool* bfs_visit(graph g, unsigned int start_id, const bfs_visit_callback_t c);
 
