@@ -73,3 +73,37 @@ void connected_components(graph g, unsigned int *v) {
         tree_id = next_tree_id;
     }
 }
+
+int* bfs_tree(graph g, unsigned int start_id) {
+    unsigned int start_idx = start_id-1;
+    size_t dim = get_dim(g);
+    int *parent = new int[dim];
+    bool *visited = new bool[dim];
+    for (int i=0; i<dim; i++) {
+        visited[i] = false;
+        parent[i] = -1;
+    }
+
+    bfs_queue q = new_queue();
+    q = enqueue(q, start_idx);
+    visited[start_idx] = true;
+    while (!is_empty(q)) {
+        int u_idx = dequeue(q);
+        int u_id = u_idx+1;
+
+        adj_list u_adj = get_adj_list(g, u_id);
+
+        while (u_adj != NULL) {
+            int w_id = get_adj_node(u_adj);
+            int w_idx = w_id-1;
+            if (!visited[w_idx]) {
+                visited[w_idx] = true;
+                parent[w_idx] = u_id;
+                q = enqueue(q, w_idx);
+            }
+            u_adj = get_next_adj(u_adj);
+        }
+    }
+
+    return parent;
+}

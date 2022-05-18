@@ -50,6 +50,14 @@ void print_connected_components(unsigned int *cc, int dim) {
         cout << i+1 << " is belongs to tree number " << cc[i] << endl;
 }
 
+void print_parent_array(graph g, int *parent) {
+    cout << "parent array: ";
+    for (int i=0; i<g.dim; i++) {
+        cout << parent[i] << " ";
+    }
+    cout << endl;
+}
+
 int main(int argc, const char *argv[]) {
     if (argc < EXPECTED_ARGS) {
         cerr << "Exptected 4 arguments" << endl;
@@ -74,6 +82,8 @@ int main(int argc, const char *argv[]) {
     unsigned int connected_components_v[g.dim];
     connected_components(g, connected_components_v);
     print_connected_components(connected_components_v, g.dim);
+
+    print_parent_array(g, bfs_tree(g, connected_start_idx));
 
     return 0;
 }
