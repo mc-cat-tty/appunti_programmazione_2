@@ -1,0 +1,5 @@
+graph.o: graph.cpp graph.h
+main.o: main.cpp graph.h priority_queue.h shortest_path.h
+priority_queue.o: priority_queue.cpp priority_queue.h
+shortest_path.o: shortest_path.cpp shortest_path.h graph.h \
+ priority_queue.h
