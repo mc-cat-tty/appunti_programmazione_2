@@ -151,3 +151,11 @@ Autenticazione crittografica nella storia: il nome di ogni commit è un hash SHA
 Il maintainer può decidere se soddisfare la pull request o meno.
 
 *Benevolent dictator*
+
+## Pull
+L'operazione di pull consiste in:
+ 1. fetch -> aggiorna la repo locale
+ 2. merge -> merge delle modifiche remote con quelle locali
+
+
+
