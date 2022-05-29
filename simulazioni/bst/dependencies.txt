@@ -1,0 +1,3 @@
+bst.o: bst.cpp bst.h carta.h
+carta.o: carta.cpp carta.h
+compito.o: compito.cpp bst.h carta.h
