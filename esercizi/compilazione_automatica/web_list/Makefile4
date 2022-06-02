@@ -8,10 +8,10 @@ build: $(OBJ)
 
 .PHONY: clean cleanall
 clean:
-	rm -f *.o dependencies.txt
+	rm -f $(OBJ)
 
 cleanall:
-	rm -f *.o dependencies.txt $(EXEC)
+	rm -f $(OBJ dependencies.txt $(EXEC)
 
 gendep:
 	g++ -MM *.cc > dependencies.txt
