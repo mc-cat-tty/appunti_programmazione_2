@@ -14,4 +14,4 @@ bfs_queue enqueue(bfs_queue q, int node_id);
 int dequeue(bfs_queue &q);  /**< return node_id */
 int first(bfs_queue q);
 bfs_queue new_queue();
-bool is_empty(bfs_queue q);
+bool is_empty_queue(bfs_queue q);
