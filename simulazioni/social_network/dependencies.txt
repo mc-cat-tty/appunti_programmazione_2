@@ -1,0 +1,3 @@
+coda.o: coda.cpp coda.h
+compito.o: compito.cpp grafi.h node.h coda.h
+grafi.o: grafi.cpp grafi.h

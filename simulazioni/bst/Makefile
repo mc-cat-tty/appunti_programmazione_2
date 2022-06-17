@@ -7,7 +7,7 @@ CXX = g++
 -include dependencies.txt
 
 build: $(OBJ)
-	$(CXX) -o $(EXEC) $(OBJ)
+	$(CXX) $(CXXFLAGS) -o $(EXEC) $(OBJ)
 
 .PHONY: clean cleanall gendep gendoc run
 clean:
@@ -16,9 +16,7 @@ cleanall:
 	rm -f $(OBJ) dependencies.txt docs/* $(EXEC)
 gendep:
 	$(CXX) -MM *.cpp > dependencies.txt
-
 gendoc:
 	doxygen
-
 run:
 	./$(EXEC)
