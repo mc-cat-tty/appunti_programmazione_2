@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cstring>
 
-using namespace std ;
+using namespace std;
 
 #include "liste.h"
 
