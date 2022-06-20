@@ -1,0 +1,4 @@
+compito.o: compito.cpp tipo.h liste.h grafo.h
+grafo.o: grafo.cpp grafo.h
+liste.o: liste.cpp tipo.h liste.h
+tipo.o: tipo.cpp tipo.h

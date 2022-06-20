@@ -1,0 +1,24 @@
+1
+Palazzo Re Enzo
+e
+6
+Palazzo Pepoli
+m
+2
+Palazzo Fava
+m
+4
+Piazza S. Stefano
+p
+8
+Piazza Nettuno
+p
+7
+Museo Archeologico
+m
+3
+Torre Asinelli
+e
+5
+Torre Garisenda
+e
